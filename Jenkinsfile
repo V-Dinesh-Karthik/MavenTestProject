@@ -2,21 +2,21 @@ pipeline{
     agent any
     
     stages {
-        stage(name: 'Cleaning'){
+        stage('Cleaning'){
             steps{
                 withMaven(maven: 'MAVEN_HOME'){
                     sh 'mvn clean'
                 }
             }
         }
-        stage(name: 'Installing'){
+        stage('Installing'){
             steps{
                 withMaven(maven: 'MAVEN_HOME'){
                     sh 'mvn install'
                 }
             }
         }
-        stage(name: 'Testing'){
+        stage('Testing'){
             steps{
                 withMaven(maven: 'MAVEN_HOME'){
                     sh 'mvn test'
