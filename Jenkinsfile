@@ -16,7 +16,7 @@ pipeline{
                 }
             }
         }
-        stage(name: 'Cleaning'){
+        stage(name: 'Testing'){
             steps{
                 withMaven(maven: 'MAVEN_HOME'){
                     sh 'mvn test'
