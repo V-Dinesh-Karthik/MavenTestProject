@@ -5,21 +5,21 @@ pipeline{
         stage('Cleaning'){
             steps{
                 withMaven(maven: 'MAVEN_HOME'){
-                    sh 'mvn clean'
+                    bat 'mvn clean'
                 }
             }
         }
         stage('Installing'){
             steps{
                 withMaven(maven: 'MAVEN_HOME'){
-                    sh 'mvn install'
+                    bat 'mvn install'
                 }
             }
         }
         stage('Testing'){
             steps{
                 withMaven(maven: 'MAVEN_HOME'){
-                    sh 'mvn test'
+                    bat 'mvn test'
                 }
             }
         }
